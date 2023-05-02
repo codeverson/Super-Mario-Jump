@@ -1,7 +1,10 @@
 const mario = document.querySelector('.mario')
 const pipe = document.querySelector('.pipe')
 const jumpSound = new Audio('./audio/smw_jump.wav'); // criando objeto Audio para o som de pulo
+const backgroundMusic = new Audio('./audio/music.wav')
 
+backgroundMusic.loop = true;
+backgroundMusic.play();
 
 const jump = () => {
     mario.classList.add('jump');
@@ -20,11 +23,12 @@ const loop = setInterval(() => {
 
     if (pipePosition <= 120 && pipePosition > 0 && marioPosition < 80) {
         const gameOverSound = new Audio('./audio/smw_lost_a_life.wav'); // criando objeto Audio para o som de game over
-        const backgroundMusic = document.querySelector('.background-music');
-        backgroundMusic.play();
-        backgroundMusic.pause();
+
+    
         gameOverSound.play(); // reproduzindo o som de game over
-        
+
+        backgroundMusic.pause();
+
         pipe.style.animation = 'none'; 
         pipe.style.left = `${pipePosition}px`;
  
