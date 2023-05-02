@@ -18,9 +18,19 @@ const jump = () => {
     }
 }
 
+let score = 0; // inicializa a contagem de pontos
+const scoreElement = document.querySelector('.score'); // pega o elemento HTML que mostra a pontuação
+const interval = setInterval(() => {
+  if (isGameRunning) { // verifica se o jogo ainda está em execução
+    score++; // incrementa a pontuação
+    scoreElement.innerHTML = `Pontuação: ${score}`; // atualiza o elemento HTML que mostra a pontuação
+  }
+}, 1500); // intervalo de 1 segundos
+
 const loop = setInterval(() => {
   const pipePosition = pipe.offsetLeft;
   const marioPosition = +window.getComputedStyle(mario).bottom.replace('px', '');
+
   
   if (pipePosition <= 120 && pipePosition > 0 && marioPosition < 80) {
     const gameOverSound = new Audio('./audio/smw_lost_a_life.wav'); // criando objeto Audio para o som de game over

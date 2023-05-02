@@ -69,6 +69,16 @@
     
   }
 
+  .score {
+    background-color: rgb(231, 179, 37);
+    width: -500px;
+    color: white;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+  }
+
   .creditos {
     background-color: rgb(94, 76, 27);
     width: -500px;
