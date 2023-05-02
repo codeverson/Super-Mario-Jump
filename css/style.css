@@ -39,7 +39,7 @@
 
 .container {
     position: relative;
-    left: 50%;
+    left: 100%;
     transform: translateX(-50%);
     display: flex;
     justify-content: center;

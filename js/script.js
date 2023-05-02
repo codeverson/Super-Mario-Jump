@@ -3,15 +3,19 @@ const pipe = document.querySelector('.pipe')
 const jumpSound = new Audio('./audio/smw_jump.wav'); // criando objeto Audio para o som de pulo
 const backgroundMusic = new Audio('./audio/music.wav')
 
+let isGameRunning = true;
+
 backgroundMusic.loop = true;
 backgroundMusic.play();
 
 const jump = () => {
-  mario.classList.add('jump');
-  jumpSound.play();
-  setTimeout(() => {
-    mario.classList.remove('jump');
-  }, 500)
+    if (isGameRunning) {
+        mario.classList.add('jump');
+        jumpSound.play();
+        setTimeout(() => {
+          mario.classList.remove('jump');
+        }, 500)
+    }
 }
 
 const loop = setInterval(() => {
@@ -30,6 +34,7 @@ const loop = setInterval(() => {
     mario.style.width = '75px'
     mario.style.marginLeft = "50px"
     clearInterval(loop);
+    isGameRunning = false;
     document.querySelector('.container').style.display = 'block'; // mostra o botão de reiniciar
   }
 }, 10);
