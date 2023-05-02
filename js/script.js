@@ -35,7 +35,7 @@ const loop = setInterval(() => {
     mario.style.marginLeft = "50px"
     clearInterval(loop);
     isGameRunning = false;
-    document.querySelector('.container').style.display = 'block'; // mostra o botão de reiniciar
+    document.querySelector('.container').style.display = 'flex'; // mostra o botão de reiniciar
   }
 }, 10);
 
