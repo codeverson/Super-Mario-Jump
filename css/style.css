@@ -37,6 +37,35 @@
     animation: clouds-animation 20s infinite linear;
 }
 
+.container {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: -30%;
+  }
+  
+  .failmsg {     
+    position: absolute;
+    height: 100px;
+    width: 30%;
+    background-color: aquamarine;
+    text-align: center;
+    padding-top: 10px;
+    bottom: -30%;
+  }
+  
+  .restartbutton {
+    height: 50px;
+    width: 150px;
+    border: none;
+    background-color: #87CEEB;
+    color: rgb(255, 255, 255);
+    box-shadow: -2px 3px 0 #294397, -4px 6px 0 #000;
+  }
+
 @keyframes pipe-animation {
     from {
         right:-550px;
